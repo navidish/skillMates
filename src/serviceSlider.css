@@ -1,0 +1,41 @@
+.serviceSlider .swiper-wrapper {
+  height: 420px;
+  /* background: pink; */
+}
+
+.serviceSlider .swiper-button-prev::after,
+.serviceSlider .swiper-button-next::after {
+  content: '';
+}
+
+.serviceSlider .swiper-button-prev,
+.serviceSlider .swiper-button-next {
+  top: 96%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 36px;
+  height: 36px;
+}
+
+.serviceSlider .swiper-button-prev {
+  left: 88.4%;
+  background-image: url('../src/assets/images/home/services/icons/chevron-right.svg');
+}
+
+.serviceSlider .swiper-button-next {
+  background-image: url('../src/assets/images/home/services/icons/chevron-left.svg');
+  right: 66px;
+}
+
+@media (max-width: 1300px) {
+  .serviceSlider .swiper {
+    height: auto;
+  }
+  .serviceSlider .swiper-wrapper {
+    height: 320px;
+  }
+  .serviceSlider .swiper-button-prev,
+  .serviceSlider .swiper-button-next {
+    display: none;
+  }
+}

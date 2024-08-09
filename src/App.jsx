@@ -1,10 +1,10 @@
-import './App.css';
-
+import Home from './pages/Home';
 function App() {
   return (
-    <>
-      <p className="text-gray-50"> skillMates</p>
-    </>
+    <div className="max-w-[1440px] mx-auto bg-page overflow-hidden relative">
+      <Home />
+      <div className="h-[2000px]"> </div>
+    </div>
   );
 }
 
