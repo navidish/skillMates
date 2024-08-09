@@ -16,7 +16,7 @@ const Header = () => {
   return (
     <header
       className={` ${
-        isActive ? 'bg-neutral-500 py-[16px]' : 'bg-transparent py-[20px]'
+        isActive ? 'bg-secondary-800 py-[16px]' : 'bg-transparent py-[20px]'
       } 
         fixed max-w-[1440px] z-30 left-0 right-0 mx-auto flex justify-between items-center px-[20px]  lg:px-[80px] transition-all duration-300`}
     >
@@ -29,15 +29,15 @@ const Header = () => {
         className="lg:hidden absolute left-4"
       >
         {navMobile ? (
-          <RiCloseFill className="text-primary-200 text-3xl cursor-pointer" />
+          <RiCloseFill className="text-primary-400 text-3xl cursor-pointer" />
         ) : (
-          <RiMenu4Fill className="text-primary-200 text-3xl cursor-pointer" />
+          <RiMenu4Fill className="text-primary-400 text-3xl cursor-pointer" />
         )}
       </div>
       <NavMobile navMobile={navMobile} />
 
       <div className="hidden lg:flex gap-4">
-        <button className=" btn btn-sm text-white hover:text-primary-200 transition">
+        <button className=" btn btn-sm text-white hover:text-primary-400 transition">
           {btnLoginText}
         </button>
         <button className=" btn btn-sm btn-primary">{btnSignupText}</button>
@@ -56,7 +56,7 @@ export const Nav = () => {
           return (
             <li key={_menu.name}>
               <a
-                className="hover:text-primary-200 transition"
+                className="hover:text-primary-400 transition"
                 href={_menu.href}
               >
                 {_menu.name}
@@ -73,7 +73,7 @@ export const NavMobile = ({ navMobile }) => {
     <nav
       className={`
         ${navMobile ? 'min-h-screen' : 'min-h-0'} 
-        lg:hidden bg-neutral-500 fixed right-0 top-0 left-0 -bottom-12 -z-10 overflow-hidden transition-all h-0`}
+        lg:hidden bg-secondary-800 fixed right-0 top-0 left-0 -bottom-12 -z-10 overflow-hidden transition-all h-0`}
     >
       <ul className="w-full h-full flex flex-col justify-center items-center gap-y-8">
         {nav.map((_menu) => {

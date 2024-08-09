@@ -26,7 +26,7 @@ const Community = () => {
             <img src={icon} alt="" />
             <h2 className="h2 section-title">
               {title}
-              <span className="text-primary-200">.</span>
+              <span className="text-primary-400">.</span>
             </h2>
           </div>
         </div>
@@ -63,7 +63,7 @@ export const CommunitySlider = ({ testimonials }) => {
               <div className="absolute bottom-[30px] text-white p-[20px] text-center">
                 <div className="mb-8 italic text-lg font-light">{message}</div>
                 <div className="flex items-center justify-center gap-x-[3px]">
-                  <span className="text-[30px] text-primary-200 font-bold">
+                  <span className="text-[30px] text-primary-400 font-bold">
                     ~
                   </span>
                   <div className="text-[20px] font-bold">{name}</div>

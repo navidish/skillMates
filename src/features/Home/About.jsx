@@ -13,7 +13,7 @@ const About = () => {
           <img src={icon} alt="" />
           <h2 className="h2 section-title">
             {title}
-            <span className="text-primary-200">.</span>
+            <span className="text-primary-400">.</span>
           </h2>
         </div>
         <p

@@ -16,7 +16,7 @@ const Services = () => {
         <img src={icon} />
         <h2 className="h2 section-title">
           {title}
-          <span className="text-primary-200">.</span>
+          <span className="text-primary-400">.</span>
         </h2>
       </div>
       <div data-aos="fade-up" data-aos-delay="300">
@@ -59,7 +59,7 @@ export const ServiceSlider = () => {
               alt=""
             />
             <div className="absolute left-[20px] bottom-[20px] bg-white h-[26px] px-[14px] flex items-center rounded-[1px]">
-              <div className="font-semibold text-sm text-neutral-500">
+              <div className="font-semibold text-sm text-neutral-900">
                 {name}
               </div>
             </div>
