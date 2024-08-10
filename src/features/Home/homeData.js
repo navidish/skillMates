@@ -9,7 +9,7 @@ import CommunityImg1 from '../../assets/images/home/community/img1.jpg';
 import CommunityImg2 from '../../assets/images/home/community/img2.jpg';
 import CommunityImg3 from '../../assets/images/home/community/img3.jpg';
 import CommunityImg4 from '../../assets/images/home/community/img4.jpg';
-
+import JoinUs from '../../assets/images/home/join/joinus.jpg'
 // icons
 import UsersIcn from '../../assets/images/home/about/icons/users-icn.svg';
 import CalendarIcn from '../../assets/images/home/services/icons/calendar.svg';
@@ -34,7 +34,7 @@ export const banner = {
   titlePart1: 'انجام باکیفیت ',
   titlePart2: ' - پروژه‌ی شما',
   subtitle:
-    'skillMates  به شما کمک می‌کند تا به راحتی با بهترین‌ها پروژه‌های خود را به نتیجه برسانید ',
+    'skillShare  به شما کمک می‌کند تا به راحتی با بهترین‌ها پروژه‌های خود را به نتیجه برسانید ',
   textBtn: 'ایجاد سریع پروژه',
   img: '',
 };
@@ -112,14 +112,14 @@ export const faq = {
   title: 'پرسش‌های شما',
   accordions: [
     {
-      question: 'skillMatesچطور فریلنسرهای خود را ارزیابی می‌کند؟',
+      question: ' skillShare چطور فریلنسرهای خود را ارزیابی می‌کند؟',
       answer:
-        'SkillMates مدارک همه فریلنسرها را بررسی کرده و در مورد توانایی‌هایشان با آن‌ها مصاحبه کرده است. درواقع سعی شده است برای هر موردی که در رزومه آمده است، مدرک مورد نظر نیز از ایشان دریافت شود.  .',
+        ' skillShare  مدارک همه فریلنسرها را بررسی کرده و در مورد توانایی‌هایشان با آن‌ها مصاحبه کرده است. درواقع سعی شده است برای هر موردی که در رزومه آمده است، مدرک مورد نظر نیز از ایشان دریافت شود.  .',
     },
     {
-      question: 'skillMatesچطور کارفرمایان خود را ارزیابی می‌کند؟',
+      question: ' skillShare چطور کارفرمایان خود را ارزیابی می‌کند؟',
       answer:
-        'SkillMates مدارک همه کارفرمایان را بررسی کرده است. درواقع سعی شده است برای هر موردی که در رزومه آمده است، مدرک مورد نظر نیز از ایشان دریافت شود.  .',
+        ' skillShare مدارک همه کارفرمایان را بررسی کرده است. درواقع سعی شده است برای هر موردی که در رزومه آمده است، مدرک مورد نظر نیز از ایشان دریافت شود.  .',
     },
     {
       question: 'چطور می توانم فریلنسر موردنظر خود را پیدا کنم؟',
@@ -133,7 +133,7 @@ export const faq = {
     },
     {
       question:
-        'شفافیت قیمتی و تضمین پایین ترین قیمت در استادبانک به چه معناست؟',
+        'شفافیت قیمتی و تضمین پایین ترین قیمت در skillShare به چه معناست؟',
       answer:
         'بدلیل وجود بازار رقباتی , هم کارفرمایان هم فریلنسرها برای انتخاب پروژه یا فریلنسر آزادی عمل دارند.',
     },
@@ -141,14 +141,14 @@ export const faq = {
 };
 
 export const join = {
-  image: '',
+  image: JoinUs,
   title: 'به ما بپیوندید',
   subtitle:
-    'برای انجام باکیفیت و سریع کارها, برای انجام پروژهای با تنوع بالا  به ما بپیوندید',
+    ' با وجود اینکه این روش به شما امکان می‌دهد تا به راحتی به مشاغل جدید دست پیدا کنید، نیازمند مدیریت خوبی از زمان و منابع خود هستید. اگر می‌خواهید به عنوان یک فریلنسر موفق به موفقیت برسید، این مهم است که ابزارهای لازم را برای موفقیت خود فراهم کنید.',
   btnText: 'شروع کنید',
 };
 
 export const footer = {
   logo: Logo,
-  copyrightText: 'تمام حقوق برای skillMates محفوظ است',
+  copyrightText: 'تمام حقوق برای skillShare محفوظ است',
 };

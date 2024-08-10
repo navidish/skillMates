@@ -7,6 +7,7 @@ import Community from './Community';
 import Faq from './Faq';
 import Footer from './Footer';
 import Services from './Services';
+import Join from './Join';
 
 const Main = () => {
   Aos.init({
@@ -20,6 +21,7 @@ const Main = () => {
       <About />
       <Services />
       <Community />
+      <Join/>
       <Faq />
       <Footer />
     </>
