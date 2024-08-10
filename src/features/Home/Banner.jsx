@@ -3,7 +3,7 @@ import { banner } from './homeData';
 const Banner = () => {
   const { titlePart1, titlePart2, subtitle, textBtn } = banner;
   return (
-    <section className="bg-secondary-800 h-screen">
+    <section className="bg-secondary-800 h-[680px]">
       <div className="container mx-auto h-full">
         <div className=" flex h-full items-center relative space-x-48 lg:space-x-24">
           <div className=" text-white flex-1 items-start z-10  pr-6 lg:pr-0  ">
