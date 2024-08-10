@@ -2,8 +2,10 @@ import { header } from './homeData';
 import { RiMenu4Fill, RiCloseFill } from 'react-icons/ri';
 import { useEffect, useState } from 'react';
 import { nav } from './homeData';
+import { useNavigate } from 'react-router-dom';
 const Header = () => {
   const { logo, btnLoginText, btnSignupText } = header;
+  const navigate = useNavigate();
   const [isActive, setIsActive] = useState(false);
   const [navMobile, setNavMobile] = useState(false);
 
@@ -37,7 +39,10 @@ const Header = () => {
       <NavMobile navMobile={navMobile} />
 
       <div className="hidden lg:flex gap-4">
-        <button className=" btn btn-sm text-white hover:text-primary-400 transition">
+        <button
+          onClick={() => navigate('/auth')}
+          className=" btn btn-sm text-white hover:text-primary-400 transition"
+        >
           {btnLoginText}
         </button>
         <button className=" btn btn-sm btn-primary">{btnSignupText}</button>
@@ -69,6 +74,7 @@ export const Nav = () => {
   );
 };
 export const NavMobile = ({ navMobile }) => {
+  const navigate = useNavigate();
   return (
     <nav
       className={`
@@ -87,7 +93,12 @@ export const NavMobile = ({ navMobile }) => {
       </ul>
       <div className="-mt-44 flex justify-center gap-x-8">
         <button className="btn btn-lg text-white">ورود</button>
-        <button className="btn btn-lg btn-primary">ثبت‌نام</button>
+        <button
+          onClick={() => navigate('/auth')}
+          className="btn btn-lg btn-primary"
+        >
+          ثبت‌نام
+        </button>
       </div>
     </nav>
   );

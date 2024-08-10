@@ -13,10 +13,10 @@ export default {
   content: ['./index.html', './src/**/**/*.{js,ts,jsx,tsx}'],
   theme: {
     container: {
-      padding: {
-        DEFAULT: '0',
-      },
+      center: true,
+      padding: '1rem',
     },
+
     screens: {
       sm: '640px',
       md: '768px',
