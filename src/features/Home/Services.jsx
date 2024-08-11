@@ -50,16 +50,16 @@ export const ServiceSlider = () => {
         const { image, name } = program;
         return (
           <SwiperSlide
-            className="max-w-[320px] max-h-[320px] relative"
+            className="max-w-[320px] max-h-[320px] relative "
             key={index}
           >
             <img
-              className="w-[328px] h-[328px] object-cover"
+              className="w-[328px] h-[328px] object-cover rounded-[8px]"
               src={image}
               alt=""
             />
-            <div className="absolute left-[20px] bottom-[20px] bg-white h-[26px] px-[14px] flex items-center rounded-[1px]">
-              <div className="font-semibold text-sm text-neutral-900">
+            <div className="absolute left-[20px] rounded-[4px] bottom-[20px] bg-white h-[26px] px-[14px] flex items-center ">
+              <div className="font-semibold text-sm text-neutral-900 ">
                 {name}
               </div>
             </div>

@@ -7,7 +7,7 @@ const Faq = () => {
     <section className='section pt-[480px] lg:pt-[280px]'>
       <div className='max-w-[768px] mx-auto lg:bg-faq bg-cover bg-no-repeat lg:h-[768px] lg:pt-6'>
         <div className='section-title-group justify-start lg:justify-center space-x-4 
-        lg:max-w-[540px] mx-auto px-4 lg:px-0'
+        lg:max-w-[540px] mx-auto px-4 lg:px-0 '
         data-aos="fade-up"
         data-aos-offset="200"
         data-aos-delay="200"
@@ -37,7 +37,7 @@ const Accordion = ({accordion})=>{
   const {question,answer} = accordion;
     return(
       <div onClick={()=>setIsOpen((!isOpen))} className='cursor-pointer'>
-        <div className='bg-white border rounded-sm'>
+        <div className='bg-white border rounded-[8px]'>
           <div className='min-h-[60px] flex items-center justify-between px-[30px] '>
             <h6 className='h6'>{question}</h6>
             <div>

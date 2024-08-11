@@ -10,7 +10,7 @@ const Community = () => {
       <div className="container flex">
        <div className='flex max-w-[400px]'>
        <div
-            className="section-title-group max-w-[400px] px-4 lg:px-0 lg:ml-0 mx-auto"
+            className="section-title-group max-w-[400px] px-4 lg:px-0 lg:ml-0 mx-auto "
             data-aos="fade-up"
             data-aos-offset="200"
             data-aos-delay="200"
@@ -57,7 +57,7 @@ export const CommunitySlider = ({ testimonials }) => {
             <div className="relative">
               <div>
                 <img
-                  className="w-[328px] h-[328px] object-cover bg-gradient-to-t	"
+                  className="w-[328px] h-[328px] object-cover bg-gradient-to-t	rounded-[8px]"
                   src={image}
                   alt=""
                 />

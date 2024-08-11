@@ -39,13 +39,10 @@ const Header = () => {
       <NavMobile navMobile={navMobile} />
 
       <div className="hidden lg:flex gap-4">
-        <button
-          onClick={() => navigate('/auth')}
-          className=" btn btn-sm text-white hover:text-primary-400 transition"
-        >
-          {btnLoginText}
+        <button 
+            onClick={() => navigate('/auth')} className=" button button-sm button-primary">
+            {btnSignupText}
         </button>
-        <button className=" btn btn-sm btn-primary">{btnSignupText}</button>
       </div>
     </header>
   );
@@ -92,12 +89,11 @@ export const NavMobile = ({ navMobile }) => {
         })}
       </ul>
       <div className="-mt-44 flex justify-center gap-x-8">
-        <button className="btn btn-lg text-white">ورود</button>
         <button
           onClick={() => navigate('/auth')}
-          className="btn btn-lg btn-primary"
+          className="button button-lg button-primary"
         >
-          ثبت‌نام
+         ورود / ثبت‌نام
         </button>
       </div>
     </nav>

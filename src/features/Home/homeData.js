@@ -18,14 +18,14 @@ import QuestionMarkIcn from '../../assets/images/home/faq/icons/question-mark.sv
 
 export const header = {
   logo: Logo,
-  btnLoginText: 'ورود',
-  btnSignupText: 'ثبت‌نام',
+  btnLoginText: '',
+  btnSignupText: 'ورود / ثبت‌نام',
 };
 
 export const nav = [
   { name: 'خانه', href: '/' },
-  { name: 'درباره‌ما', href: '/' },
-  { name: 'خدمات', href: '/' },
+  { name: 'اهداف‌ما', href: '/' },
+  { name: 'دسته‌بندی‌ها', href: '/' },
   { name: 'نظرات مشتریان', href: '/' },
   { name: 'سوالات شما', href: '/' },
 ];

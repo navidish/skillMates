@@ -2,7 +2,7 @@ import {footer} from './homeData'
 const Footer = () => {
   const {logo,copyrightText} = footer;
   return (
-    <footer className='bg-secondary-800 h-[125px] md:h-[195px] px-[20px]'>
+    <footer className='bg-secondary-800 h-[125px] md:h-[195px] px-[20px] rounded-t-[8px]'>
       <div className='container mx-auto h-full flex justify-between items-center md:items-end md:pb-[50px]'
            data-aos="fade-up"
             data-aos-delay="50">
