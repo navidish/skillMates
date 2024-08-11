@@ -8,7 +8,7 @@ import Loading from '../../ui/Loading';
 import { HiArrowRight } from 'react-icons/hi';
 import { CiEdit } from 'react-icons/ci';
 
-function CheckOTPForm({ phoneNumber, onBack, onReSendOtp, otpResponse }) {
+function CheckOTPForm({ phoneNumber, onBack, onReSendOtp, otpResponse,otpCode }) {
   const RESEND_TIME = 90;
   const navigate = useNavigate();
   const [time, setTime] = useState(RESEND_TIME);
@@ -39,10 +39,15 @@ function CheckOTPForm({ phoneNumber, onBack, onReSendOtp, otpResponse }) {
   }, [time]);
 
   return (
-    <div>
-      <button onClick={onBack}>
-        <HiArrowRight className="w-6 h-6 text-secondary-500" />
-      </button>
+    <div className='text-center'>
+      <div className='flex gap-2 '>
+        
+        <button onClick={onBack}>
+          <HiArrowRight className="w-6 h-6 text-secondary-600" />
+        </button>
+          <h6 className='h6 text-secondary-600'>بازگشت</h6>
+        </div>
+
       {otpResponse && (
         <p className="flex items-center gap-x-2 my-4">
           <span> {otpResponse?.message}</span>
@@ -51,15 +56,12 @@ function CheckOTPForm({ phoneNumber, onBack, onReSendOtp, otpResponse }) {
           </button>
         </p>
       )}
-      <div className="mb-4 text-secondary-500">
-        {time > 0 ? (
-          <p> {time} ثانیه تا ارسال مجدد کد</p>
-        ) : (
-          <button onClick={onReSendOtp}>ارسال مجدد کد تایید</button>
-        )}
-      </div>
+
+      {
+        otpCode?  <h4 className='h5 text-center p-10'>کد <span className='font-bold text-lg text-primary-400 underline'>{otpCode}</span> را در کادر زیر وارد کند</h4>: <h3 className='h3 text-center p-10'>کد تایید را وارد کنید</h3>
+      }
+        
       <form className="space-y-10 py-8" onSubmit={chckOtpHandler}>
-        <p className="font-bold text-secondary-800">کد تایید را وارد کنید</p>
         <OTPInput
           value={otp}
           onChange={setOtp}
@@ -70,7 +72,7 @@ function CheckOTPForm({ phoneNumber, onBack, onReSendOtp, otpResponse }) {
           inputStyle={{
             width: '2.5rem',
             padding: '0.5rem 0.2rem',
-            border: '1px solid rgb(var(--color-primary-400))',
+            border: '1px solid rgb(var(--color-secondary-400))',
             borderRadius: '0.5rem',
           }}
         />
@@ -82,6 +84,14 @@ function CheckOTPForm({ phoneNumber, onBack, onReSendOtp, otpResponse }) {
           </button>
         )}
       </form>
+
+      <div className={`${time > 0 ? ' text-green-600 bg-green-100' : ' text-red-600 bg-red-100'} flex mt-4  p-2 max-w-[198px]  items-center justify-center rounded-lg`}>
+        {time > 0 ? (
+          <p > {time} ثانیه تا ارسال مجدد کد</p>
+        ) : (
+          <button onClick={onReSendOtp}>ارسال مجدد کد تایید</button>
+        )}
+      </div>
     </div>
   );
 }

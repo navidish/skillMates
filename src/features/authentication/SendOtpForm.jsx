@@ -1,12 +1,13 @@
 import React from 'react';
+import Logo from '../../assets/images/logo.svg'
 import TextField from '../../ui/TextField';
-
 import Loading from '../../ui/Loading';
 
 const SendOTPForm = ({ phoneNumber, onChange, onSubmit, isSendingOtp }) => {
   return (
-    <div className="pt-8">
-      <form className="space-y-8" onSubmit={onSubmit}>
+    <div>
+      <h3 className='h3 text-center pb-10'>ورود یا ثبت ‌نام</h3>
+      <form className="space-y-8 " onSubmit={onSubmit}>
         <TextField
           name="phonenumber"
           value={phoneNumber}
