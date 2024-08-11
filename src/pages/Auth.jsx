@@ -1,12 +1,10 @@
 import React from 'react';
-import SendOtpForm from '../features/authentication/SendOtpForm';
-import CheckOTPForm from '../features/authentication/CheckOTPForm';
+import AuthContainer from '../features/authentication/AuthContainer';
 
 const Auth = () => {
   return (
     <div className="container w-full sm:max-w-sm">
-      <SendOtpForm />
-      {/* <CheckOTPForm /> */}
+      <AuthContainer />
     </div>
   );
 };
