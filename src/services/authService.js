@@ -11,3 +11,9 @@ export async function checkOtp(data) {
     .post('/user/check-otp', data)
     .then(({ data }) => data.data);
 }
+
+export function completeProfile(data) {
+  return apiRequest
+    .post('/user/complete-profile', data)
+    .then(({ data }) => data.data);
+}
