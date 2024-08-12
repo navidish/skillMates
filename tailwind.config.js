@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-
+import tailwindFormPlugin from '@tailwindcss/forms';
 function withOpacity(variableName) {
   return ({ opacityValue }) => {
     if (opacityValue !== undefined) {
@@ -69,5 +69,9 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    tailwindFormPlugin({
+      strategy: 'class',
+    }),
+  ],
 };
