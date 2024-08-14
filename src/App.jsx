@@ -9,20 +9,20 @@ import OwnerLayout from './features/owner/OwnerLayout';
 import DashboardLayout from './features/owner/DashboardLayout';
 const queryClient = new QueryClient();
 
-function App() { 
+function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Toaster />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/auth" element={<Auth />} />
-          <Route path="/complete-profile" element={<CompleteProfile />} />
-          <Route path="/owner" element={ <OwnerLayout />}>
-            <Route index element={<Navigate to="dashboard" replace />} />
-            <Route path="dashboard" element={<DashboardLayout />} />
-          </Route>
-          <Route path="*" element={<NotFound/>} />
-        </Routes>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/auth" element={<Auth />} />
+        <Route path="/complete-profile" element={<CompleteProfile />} />
+        <Route path="/owner" element={<OwnerLayout />}>
+          <Route index element={<Navigate to="dashboard" replace />} />
+          <Route path="dashboard" element={<DashboardLayout />} />
+        </Route>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </QueryClientProvider>
   );
 }

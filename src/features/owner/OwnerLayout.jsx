@@ -8,7 +8,7 @@ function OwnerLayout() {
 
   return (
     <MainLayout>
-      <div className="row-start-1 row-span-2 mt-[148px]">
+      <div className="row-start-1 row-span-2 ">
         <ul className="flex flex-col gap-y-4">
           <li>
             <NavLink
