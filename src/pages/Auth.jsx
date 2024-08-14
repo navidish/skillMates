@@ -3,8 +3,10 @@ import AuthContainer from '../features/authentication/AuthContainer';
 
 const Auth = () => {
   return (
-    <div className="container w-full sm:max-w-sm">
-      <AuthContainer />
+    <div className="container xl:max-w-screen-xl">
+      <div className="flex justify-center pt-8">
+        <AuthContainer />
+      </div>
     </div>
   );
 };

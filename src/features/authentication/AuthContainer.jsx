@@ -65,6 +65,6 @@ function AuthContainer() {
     }
   };
 
-  return <div className="pt-8">{renderStep()}</div>;
+  return <div className="w-full sm:max-w-sm">{renderStep()}</div>;
 }
 export default AuthContainer;
