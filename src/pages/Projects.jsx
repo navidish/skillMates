@@ -1,7 +1,12 @@
 import React from 'react';
+import ProjectsTable from '../features/projects/projectsTable';
 
 const Projects = () => {
-  return <div>Projects</div>;
+  return (
+    <>
+      <ProjectsTable />
+    </>
+  );
 };
 
 export default Projects;
