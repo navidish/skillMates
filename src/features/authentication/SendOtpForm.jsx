@@ -9,7 +9,7 @@ const SendOTPForm = ({ onSubmit, isSendingOtp, register }) => {
       <h3 className="h3 text-center pb-10">ورود یا ثبت ‌نام</h3>
       <form className="space-y-8 " onSubmit={onSubmit}>
         <TextField
-          name="phonenumber"
+          name="phoneNumber"
           label="شماره موبایل"
           register={register}
         />
