@@ -129,7 +129,7 @@
 }
 @layer components {
   .textInputField {
-    @apply w-full py-3 px-4 rounded-xl text-secondary-800 border border-gray-100 hover:border-primary-400 focus:border-primary-300  focus:shadow-md focus:shadow-primary-200 focus:bg-white transition-all duration-300 ease-in-out;
+    @apply w-full bg-secondary-100 py-3 px-4 rounded-xl text-secondary-800 border border-gray-100 hover:border-primary-400 focus:border-primary-300  focus:shadow-md focus:shadow-primary-200 focus:bg-white transition-all duration-300 ease-in-out;
   }
   .btn {
     @apply px-4 py-2 font-bold bg-primary-700 text-white w-full rounded-xl transition-all duration-300 hover:bg-primary-600 shadow-md shadow-primary-200;
@@ -209,4 +209,34 @@
   z-index: 0 !important;
   border-radius: 12px 0 0 0;
   box-shadow: 0 -16px 0 0 #fff;
+}
+/* TABLE */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+table .title-row {
+  background-color: rgb(var(--color-secondary-100));
+}
+
+table td,
+table th {
+  border-bottom: 1px solid rgb(var(--color-secondary-200));
+  text-align: right;
+  white-space: nowrap;
+}
+
+table th {
+  padding: 0.6rem 1rem;
+  color: rgb(var(--color-secondary-600));
+  font-size: 0.9rem;
+}
+
+table td {
+  font-size: 0.85rem;
+  padding: 1rem 1rem;
+  color: rgb(var(--color-secondary-600));
 }

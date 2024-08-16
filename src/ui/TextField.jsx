@@ -1,19 +1,31 @@
-const TextField = ({ label, name, onChange, value }) => {
+function TextField({
+  label,
+  name,
+  register,
+  validationSchema = {},
+  type = 'text',
+  required,
+  errors,
+}) {
   return (
     <div>
+      {console.log('shasan', required, name)}
       <label className="mb-2 block text-secondary-700" htmlFor={name}>
-        {label}
+        {label} {required && <span className="text-error">*</span>}
       </label>
       <input
+        {...register(name, validationSchema)}
         id={name}
-        value={value}
-        name={name}
-        onChange={onChange}
-        type={'text'}
-        autoComplete="off"
         className="textInputField"
+        type={type}
+        autoComplete="off"
       />
+      {errors && errors[name] && (
+        <span className="text-error block text-sm mt-2">
+          {errors[name]?.message}
+        </span>
+      )}
     </div>
   );
-};
+}
 export default TextField;

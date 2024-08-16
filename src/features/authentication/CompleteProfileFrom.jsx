@@ -6,21 +6,23 @@ import { completeProfile } from '../../services/authService';
 import { toast } from 'react-hot-toast';
 import Loading from '../../ui/Loading';
 import { useNavigate } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 
 function CompleteProfileFrom() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [role, setRole] = useState('');
   const navigate = useNavigate();
-
+  const {
+    handleSubmit,
+    register,
+    watch,
+    formState: { errors },
+  } = useForm();
   const { mutateAsync, isPending } = useMutation({
     mutationFn: completeProfile,
   });
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const onSubmit = async (data) => {
     try {
-      const { message, user } = await mutateAsync({ name, email, role });
+      const { message, user } = await mutateAsync({ data });
       if (!user.status !== 2) {
         navigate('/');
         toast('پروفایل شما در انتظار تایید است', { icon: '👏' });
@@ -38,36 +40,51 @@ function CompleteProfileFrom() {
     <div className="flex flex-col gap-y-6 items-center pt-10">
       <h1 className="font-bold text-3xl text-secondary-700">تکمیل اطلاعات</h1>
       <div className="w-full sm:max-w-sm">
-        <form className="space-y-8" onSubmit={handleSubmit}>
+        <form className="space-y-8" onSubmit={handleSubmit(onSubmit)}>
           <TextField
             label="نام و نام خانوادگی"
             name="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            register={register}
+            validationSchema={{
+              required: 'نام و نام خانوادگی  ضروری است',
+            }}
+            errors={errors}
           />
           <TextField
             label="ایمیل"
             name="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            register={register}
+            validationSchema={{
+              required: 'ایمیل ضروری است',
+              pattern: {
+                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                message: 'ایمیل نامعتبر است',
+              },
+            }}
+            errors={errors}
           />
           <div className="flex items-center justify-center gap-x-8">
             <RadioInput
               label="کارفرما"
               value="OWNER"
-              onChange={(e) => setRole(e.target.value)}
               id="OWNER"
               name="role"
-              checked={'OWNER' == role}
+              watch={watch}
+              register={register}
             />
             <RadioInput
               label="فریلنسر"
               value="FREELACER"
-              onChange={(e) => setRole(e.target.value)}
               id="FREELANCER"
               name="role"
-              checked={'FREELANCER' == role}
+              register={register}
+              watch={watch}
             />
+            {errors && errors['role'] && (
+              <span className="text-error block text-sm mt-2">
+                {errors['role']?.message}
+              </span>
+            )}
           </div>
           <div>
             {isPending ? (
