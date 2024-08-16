@@ -6,7 +6,7 @@ function MainLayout({ children }) {
       {children}
       <div className="bg-white  px-8  overflow-y-auto rounded-2xl">
         <Header />
-        <div className="mx-auto pt-8 max-w-screen-lg flex flex-col gap-y-12">
+        <div className="mx-auto pt-8 max-w-screen-lg flex flex-col ">
           <Outlet />
         </div>
       </div>

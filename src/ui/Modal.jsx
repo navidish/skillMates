@@ -2,7 +2,7 @@ import { HiOutlineX } from 'react-icons/hi';
 import useOutsideClick from '../hooks/useOutsideClick.js';
 import { createPortal } from 'react-dom';
 
-function Modal({ open, onClose, title, children }) {
+const Modal = ({ open, onClose, title, children }) => {
   const ref = useOutsideClick(onClose);
 
   return (
@@ -15,7 +15,7 @@ function Modal({ open, onClose, title, children }) {
         <div
           ref={ref}
           className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-        rounded-lg bg-secondary-0 p-4 shadow-lg transition-all duration-500 ease-out
+        rounded-lg bg-secondary-0 p-4 shadow-lg transition-all duration-500 ease-out min-w-[750px]
         w-[calc(100vw-2rem)] md:max-w-lg max-h-[calc(100vh-2rem)] overflow-y-auto"
         >
           <div
@@ -33,5 +33,5 @@ function Modal({ open, onClose, title, children }) {
       document.body
     )
   );
-}
+};
 export default Modal;
