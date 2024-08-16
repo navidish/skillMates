@@ -1,13 +1,14 @@
-import { TagsInput } from "react-tag-input-component";
-import RHFSelect from "../../ui/RHFSelect";
-import TextField from "../../ui/TextField";
-import { useForm } from "react-hook-form";
-import { useState } from "react";
-import DatePickerField from "../../ui/DatePickerField";
-import useCategories from "../../hooks/useCategories";
-import useCreateProject from "./useCreateProject";
-import Loading from "../../ui/Loading";
-import useEditProject from "./useEditProject";
+import { TagsInput } from 'react-tag-input-component';
+
+import TextField from '../../ui/TextField';
+import { useForm } from 'react-hook-form';
+import { useState } from 'react';
+import DatePickerField from '../../ui/DatePickerField';
+import useCategories from '../../hooks/useCategories';
+import useCreateProject from './useCreateProject';
+import Loading from '../../ui/Loading';
+import useEditProject from './useEditProject';
+import SelectInput from '../../ui/SelectInput';
 
 function CreateProjectForm({ onClose, projectToEdit = {} }) {
   const { _id: editId } = projectToEdit;
@@ -39,7 +40,7 @@ function CreateProjectForm({ onClose, projectToEdit = {} }) {
   } = useForm({ defaultValues: editValues });
 
   const [tags, setTags] = useState(prevTags || []);
-  const [date, setDate] = useState(new Date(deadline || ""));
+  const [date, setDate] = useState(new Date(deadline || ''));
   const { categories } = useCategories();
   const { isCreating, createProject } = useCreateProject();
   const { editProject, isEditing } = useEditProject();
@@ -72,35 +73,22 @@ function CreateProjectForm({ onClose, projectToEdit = {} }) {
   };
 
   return (
-    <form className="space-y-8" onSubmit={handleSubmit(onSubmit)}>
+    <form className="grid grid-cols-2 gap-4" onSubmit={handleSubmit(onSubmit)}>
       <TextField
         label="عنوان"
         name="title"
         register={register}
         required
         validationSchema={{
-          required: "عنوان ضروری است",
+          required: 'عنوان ضروری است',
           minLength: {
             value: 10,
-            message: "حداقل 10 کاراکتر را وارد کنید",
+            message: 'حداقل 10 کاراکتر را وارد کنید',
           },
         }}
         errors={errors}
       />
-      <TextField
-        label="توضیحات"
-        name="description"
-        register={register}
-        required
-        validationSchema={{
-          required: "توضیحات ضروری است",
-          minLength: {
-            value: 15,
-            message: "حداقل 15 کاراکتر را وارد کنید",
-          },
-        }}
-        errors={errors}
-      />
+
       <TextField
         label="بودجه"
         name="budget"
@@ -108,11 +96,11 @@ function CreateProjectForm({ onClose, projectToEdit = {} }) {
         register={register}
         required
         validationSchema={{
-          required: "بودجه ضروری است",
+          required: 'بودجه ضروری است',
         }}
         errors={errors}
       />
-      <RHFSelect
+      <SelectInput
         label="دسته بندی"
         required
         name="category"
@@ -121,14 +109,34 @@ function CreateProjectForm({ onClose, projectToEdit = {} }) {
       />
       <div>
         <label className="mb-2 block text-secondary-700">تگ</label>
-        <TagsInput value={tags} onChange={setTags} name="tags" />
+        <TagsInput
+          value={tags}
+          onChange={setTags}
+          name="tags"
+          placeHolder="تگ موردنظر خود را وارد کنید"
+        />
       </div>
-      <DatePickerField date={date} setDate={setDate} label="ددلاین" />
-      <div className="!mt-8">
+      <DatePickerField date={date} setDate={setDate} label="زمان تحویل" />
+
+      <TextField
+        label="توضیحات"
+        name="description"
+        register={register}
+        required
+        validationSchema={{
+          required: 'توضیحات ضروری است',
+          minLength: {
+            value: 15,
+            message: 'حداقل 15 کاراکتر را وارد کنید',
+          },
+        }}
+        errors={errors}
+      />
+      <div className="!mt-8 col-span-2">
         {isCreating || isEditing ? (
           <Loading />
         ) : (
-          <button type="submit" className="btn btn--primary w-full">
+          <button type="submit" className="btn btn--primary w-full ">
             تایید
           </button>
         )}

@@ -1,9 +1,9 @@
-import { useState } from "react";
-import { HiOutlinePlus } from "react-icons/hi";
-import Modal from "../../ui/Modal";
-import CreateProjectForm from "./CreateProjectForm";
+import { useState } from 'react';
+import { HiOutlinePlus } from 'react-icons/hi';
+import Modal from '../../ui/Modal';
+import CreateProjectForm from './CreateProjectForm';
 
-function ProjectsHeader() {
+const ProjectsHeader = () => {
   const [open, setOpen] = useState(false);
   return (
     <div className="flex items-center justify-between mb-8">
@@ -17,12 +17,12 @@ function ProjectsHeader() {
       </Modal>
       <button
         onClick={() => setOpen(true)}
-        className="btn btn--primary flex items-center gap-x-2"
+        className="btn btn--primary w-[198px] flex items-center justify-center gap-x-2"
       >
         <HiOutlinePlus />
         <span>اضافه کردن پروژه</span>
       </button>
     </div>
   );
-}
+};
 export default ProjectsHeader;

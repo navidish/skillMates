@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { TbPencilMinus } from 'react-icons/tb';
+import { HiOutlineTrash } from 'react-icons/hi';
 import useOwnerProjects from './useOwnerProjects';
 import Empty from '../../ui/Empty';
 import Loading from '../../ui/Loading';
-import { truncateText } from '../../util/utlis';
-import { toLocalDateShort, toPersianNumbersWithComma } from '../../util/utlis';
+import Modal from '../../ui/Modal';
+import CreateProjectForm from './CreateProjectForm';
+import {
+  truncateText,
+  toLocalDateShort,
+  toPersianNumbersWithComma,
+} from '../../util/utlis';
 
 const ProjectsTable = () => {
   const { isLoading, projects } = useOwnerProjects();
+  const [isEditOpen, setIsEditOpen] = useState(false);
+  const [isDeleteOpen, setIsDeleteOpen] = useState(false);
 
   if (isLoading) return <Loading />;
 
@@ -21,7 +30,7 @@ const ProjectsTable = () => {
             <th>عنوان پروژه</th>
             <th>دسته بندی</th>
             <th>بودجه</th>
-            <th>ددلاین</th>
+            <th>زمان تحویل</th>
             <th>تگ ها</th>
             <th>فریلنسر</th>
             <th>وضعیت</th>
@@ -53,7 +62,37 @@ const ProjectsTable = () => {
                   <span className="badge badge--danger">بسته</span>
                 )}
               </td>
-              <td>...</td>
+              <td>
+                <div className="flex items-center gap-x-4">
+                  <>
+                    <button onClick={() => setIsEditOpen(true)}>
+                      <TbPencilMinus className="w-5 h-5 text-primary-900" />
+                    </button>
+                    <Modal
+                      title={`ویرایش ${project.title}`}
+                      open={isEditOpen}
+                      onClose={() => setIsEditOpen(false)}
+                    >
+                      <CreateProjectForm
+                        projectToEdit={project}
+                        onClose={() => setIsEditOpen(false)}
+                      />
+                    </Modal>
+                  </>
+                  <>
+                    <button onClick={() => setIsDeleteOpen(true)}>
+                      <HiOutlineTrash className="w-5 h-5 text-error" />
+                    </button>
+                    <Modal
+                      title={`حذف ${project.title}`}
+                      open={isDeleteOpen}
+                      onClose={() => setIsDeleteOpen(false)}
+                    >
+                      delete Modal
+                    </Modal>
+                  </>
+                </div>
+              </td>
             </tr>
           ))}
         </tbody>
