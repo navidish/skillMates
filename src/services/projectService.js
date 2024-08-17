@@ -17,3 +17,8 @@ export async function editProjectApi({ id, newProject }) {
     .patch(`/project/update/${id}`, newProject)
     .then(({ data }) => data.data);
 }
+export async function removeProjectApi(id) {
+  return await apiRequest
+    .delete(`/project/${id}`)
+    .then(({ data }) => data.data);
+}

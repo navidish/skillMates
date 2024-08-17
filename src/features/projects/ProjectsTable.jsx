@@ -11,11 +11,14 @@ import {
   toLocalDateShort,
   toPersianNumbersWithComma,
 } from '../../util/utlis';
+import ConfirmDelete from '../../ui/ConfirmDelete';
+import useRemoveProject from './useRemoveProject';
 
 const ProjectsTable = () => {
   const { isLoading, projects } = useOwnerProjects();
   const [isEditOpen, setIsEditOpen] = useState(false);
   const [isDeleteOpen, setIsDeleteOpen] = useState(false);
+  const { removeProject } = useRemoveProject();
 
   if (isLoading) return <Loading />;
 
@@ -88,7 +91,16 @@ const ProjectsTable = () => {
                       open={isDeleteOpen}
                       onClose={() => setIsDeleteOpen(false)}
                     >
-                      delete Modal
+                      <ConfirmDelete
+                        resourceName={project.title}
+                        onClose={() => setIsDeleteOpen(false)}
+                        onConfirm={() =>
+                          removeProject(project._id, {
+                            onSuccess: () => setIsDeleteOpen(false),
+                          })
+                        }
+                        disabled={false}
+                      />
                     </Modal>
                   </>
                 </div>
